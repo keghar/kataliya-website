@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"main_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit excepteur ea duis ipsum exercitation nisi cupidatat esse commodo ut fugiat. Non culpa ex laboris. Veniam quis aliqua pariatur velit fugiat velit ea anim."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

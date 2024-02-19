@@ -3,6 +3,7 @@ import { PrismicLink, PrismicText } from "@prismicio/react";
 import { RichText } from "./RichText";
 import { Content } from "@prismicio/client";
 import { JSX } from "react";
+const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 
 export const BlogCard = ({
   post,
@@ -22,20 +23,20 @@ export const BlogCard = ({
         </div>
 
         <div className="flex flex-1 flex-col justify-between bg-transparent p-6 ">
-          <p className="text-sm opacity-75 text-slate-700 border-b-2 w-min pb-1">
-            {new Date(data?.publication_date || "").toLocaleDateString()}
+          <p className="text-sm opacity-75 text-slate-700 border-b-2 w-full pb-1">
+            {post.data.publication_date
+              ? dateFormatter.format(new Date(post.data.publication_date))
+              : ""}
           </p>
 
           <div className="mt-2 block">
-            <div className="">
+            <div className="font-bold text-slate-700">
               <PrismicText field={data.title} />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 text-slate-700">
               <RichText field={data.description} />
             </div>
           </div>
-
-          <div>Categories</div>
         </div>
       </div>
     </PrismicNextLink>

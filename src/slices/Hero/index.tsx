@@ -22,7 +22,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}>
-      <div className="pt-20 md:pt-48 ">
+      <div className="pt-10 md:pt-48 ">
         <div className="">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-y-10 ">
             <div className=" pt-16 text-center lg:text-left basis-1/2">
@@ -39,7 +39,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               </div>
             </div>
             <div className="basis-1/2">
-              <PrismicNextImage field={slice.primary.image} />
+              <PrismicNextImage field={slice.primary.image} priority />
             </div>
           </div>
         </div>

@@ -4,9 +4,6 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
 import { BlogCard } from "@/components/BlogCard";
-import { RichText } from "@/components/RichText";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 export default async function Recent() {
   const client = createClient();
@@ -27,15 +24,13 @@ export default async function Recent() {
   // Destructure out the content of the current page
 
   return (
-    <Suspense fallback="Loading">
-      <ul className="flex flex-col xl:flex-row gap-12 w-full ">
-        {posts?.map((post) => (
-          <li className="basis-1/3" key={post.uid}>
-            <BlogCard key={post.id} post={post} />
-          </li>
-        ))}
-      </ul>
-    </Suspense>
+    <ul className="mx-auto flex flex-col xl:flex-row gap-12 w-full max-w-xl xl:max-w-none">
+      {posts?.map((post) => (
+        <li className="basis-1/3" key={post.uid}>
+          <BlogCard key={post.id} post={post} />
+        </li>
+      ))}
+    </ul>
   );
 }
 

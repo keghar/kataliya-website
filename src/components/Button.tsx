@@ -11,7 +11,7 @@ const baseStyles = {
 const variantStyles = {
   solid: {
     purple:
-      "bg-[#e1dafd] text-slate-600 hover:bg-purple-300 hover:text-slate-800 active:bg-purple-500 active:text-slate-800 focus-visible:outline-slate-900",
+      "bg-[#e1dafd] text-slate-600 hover:bg-[#d5c8fb] hover:text-slate-800 active:bg-purple-500 active:text-slate-800 focus-visible:outline-slate-900",
     blue: "bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600",
     white:
       "bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white",

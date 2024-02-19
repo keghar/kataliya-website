@@ -37,7 +37,7 @@ export default function Divider() {
       <div
         className="absolute  mx-24 lg:px-8  inset-0 flex items-center"
         aria-hidden="true">
-        {/* <div className="w-full border-t-2 border-[#9e82f6] opacity-30" /> */}
+        <div className="w-full border-t-2 slate-200" />
       </div>
     </div>
   );

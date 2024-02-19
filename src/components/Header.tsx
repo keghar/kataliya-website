@@ -119,8 +119,7 @@ export default function Example() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden md:flex md:gap-x-12 rounded-2xl z-10">
-          <Popover className="max-w-3xl">
+        {/* <Popover className="max-w-3xl">
             <Popover.Button className="flex items-center gap-x-1 text-base hover:text-purple-700 font-semibold leading-6 text-gray-700">
               Blog
               <ChevronDownIcon
@@ -173,19 +172,34 @@ export default function Example() {
                 </Popover.Button>
               </Popover.Panel>
             </Transition>
-          </Popover>
+          </Popover> */}
+        <ul className="hidden md:flex md:justify-center md:gap-5 xl:gap-10 items-center max-w-3xl">
+          <li>
+            <Link
+              href="/blog"
+              className="text-base font-semibold leading-6 text-slate-700 hover:text-purple-700">
+              Blog
+            </Link>{" "}
+          </li>
 
-          <Link
-            href="#about"
-            className="text-base font-semibold leading-6 text-gray-700 hover:text-purple-700">
-            About
-          </Link>
-          <Link
-            href="#sign-up"
-            className="text-base font-semibold leading-6 text-gray-700 hover:text-purple-700">
-            Sign-up
-          </Link>
-        </Popover.Group>
+          <li>
+            {" "}
+            <Link
+              href="#about"
+              className="text-base font-semibold leading-6 text-slate-700 hover:text-purple-700">
+              About
+            </Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link
+              href="#sign-up"
+              className="text-base font-semibold leading-6 text-slate-700 hover:text-purple-700">
+              Sign-up
+            </Link>{" "}
+          </li>
+        </ul>
+
         <div className="hidden md:flex md:flex-1 md:justify-end">
           <div className="flex space-x-6">
             {socials.map((item) => (

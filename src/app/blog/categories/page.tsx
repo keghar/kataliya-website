@@ -5,12 +5,10 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Container from "@/components/Container";
 import { RichText } from "@/components/RichText";
-import { PrismicNextLink } from "@prismicio/next";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("categories_page");
-  const categories = await client.getAllByType("category");
 
   return (
     <Container>
@@ -18,7 +16,7 @@ export default async function Page() {
       <RichText field={page.data.description} />
       <SliceZone slices={page.data.slices} components={components} />
 
-      <div className="min-h-screen">
+      {/* <div className="min-h-screen">
         <ul>
           {categories.map((category) => {
             return (
@@ -30,7 +28,7 @@ export default async function Page() {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </Container>
   );
 }

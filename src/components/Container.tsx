@@ -16,7 +16,7 @@ export default function Container({
     <Comp
       className={clsx("px-0 md:px-6 lg:px-16 bg-slate-100 relative", className)}
       {...restProps}>
-      <div className="mx-auto w-full max-w-7xl relative bg-white">
+      <div className="mx-auto w-full max-w-7xl relative bg-white ">
         {/* <div className=" max-w-5xl">
           <Image
             src="/bubbles.png"

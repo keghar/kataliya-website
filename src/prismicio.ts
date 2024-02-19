@@ -32,10 +32,7 @@ const routes: prismic.ClientConfig["routes"] = [
   	type: "categories_page",
   	path: "/blog/categories/",
   },
-  {
-  	type: "category",
-  	path: "/blog/categories/:uid",
-  },
+ 
 ];
 
 /**

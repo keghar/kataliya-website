@@ -5,11 +5,11 @@ const SvgComponent = (
 ) => (
   <>
     <svg
-      className="opacity-30"
+      className="opacity-3 rotate-180 opacity-0"
       xmlns="http://www.w3.org/2000/svg"
       data-name="Layer 1"
       preserveAspectRatio="none"
-      fill="#9e82f6"
+      fill="#fcfcba"
       viewBox="0 0 1200 120"
       {...props}>
       <path

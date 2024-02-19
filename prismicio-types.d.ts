@@ -326,7 +326,7 @@ interface CategoryDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  name: prismic.KeyTextField;
+  name: prismic.KeyTextField,
 }
 
 /**

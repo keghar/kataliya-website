@@ -31,12 +31,15 @@ export default async function Page() {
             <RichText field={page.data.description} />
           </div>
         </div>
-        <ul>
-          {posts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </ul>
-
+        <div className="flex flex-col justify-center">
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-8 min-h-lg px-4 mx-auto place-content-evenly">
+            {posts.map((post) => (
+              <li className="max-w-lg xl:max-w-none min-h-lg">
+                <BlogCard key={post.id} post={post} />
+              </li>
+            ))}
+          </ul>
+        </div>
         <SliceZone slices={page.data.slices} components={components} />
       </Container>
     </>

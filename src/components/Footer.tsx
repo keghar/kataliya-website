@@ -62,21 +62,21 @@ const navigation = {
 // [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]
 export default function Footer() {
   return (
-    <Container className="bg-gradient-to-b from-transparent to-[#9e82f6]">
+    <Container className="bg-gradient-to-b from-transparent to-[#cfc0fb]">
       <div className="pb-0" id="sign-up">
         <div className="mx-auto ">
-          <div className="relative mx-auto isolate overflow-hidden  inset-0   px-6 py-10 sm:px-24 xl:py-32 bg-gradient-to-b from-white to-[#9e82f6]">
+          <div className="relative mx-auto isolate overflow-hidden  inset-0   px-6 py-10 sm:px-24 xl:py-32 bg-gradient-to-b from-white to-[#cfc0fb]">
             <div className="flex flex-col my-20 items-end">
               <div className="mx-auto pb-4">
                 <Heading
                   as="h2"
-                  size="xl"
+                  size="lg"
                   className=" text-slate-700 font-semibold tracking-tight ">
                   Sign Up
                 </Heading>
               </div>
               <div className="mx-auto px-4">
-                <p className="text-xl font-medium tracking wide text-slate-800">
+                <p className="text-xl font-regular tracking wide text-slate-800">
                   Fill out form below to sign up
                 </p>
               </div>

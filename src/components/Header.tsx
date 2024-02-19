@@ -89,7 +89,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative isolate z-10 bg-[#9e82f6]/30 px- md:px-6 lg:px-16 ">
+    <header className="relative isolate z-10 bg-slate-100 px- md:px-6 lg:px-16 ">
       <nav
         className="mx-auto w-full max-w-7xl bg-white flex items-center justify-between p-6 px-8  shadow-xl shadow-slate-200 "
         aria-label="Global">
@@ -143,7 +143,7 @@ export default function Example() {
                     {products.map((item) => (
                       <div
                         key={item.name}
-                        className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50">
+                        className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-[#e1dafd]">
                         <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                           <item.icon
                             className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"

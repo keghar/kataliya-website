@@ -9,7 +9,6 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import Container from "@/components/Container";
 import { components } from "@/slices";
 import { Badge } from "@/components/ui/badge";
-import { CategoryDocumentData } from "../../../../prismicio-types";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 
@@ -23,21 +22,19 @@ export default async function Page({ params }: { params: Params }) {
     })
     .catch(() => notFound());
 
-  const categories = page.data as unknown as CategoryDocumentData[];
+  //   const categories: CategoryDocumentData[] = page.data.categories.map(
+  //     (item: Simplify<BlogPostDocumentDataCategoriesItem>) =>
+  //       item.category as unknown as CategoryDocumentData
+  //   );
 
-  console.log(page.data.categories);
-
-  const posts = await client.getAllByType("blog_post", {
-    filters: [prismic.filter.not("my.blog_post.uid", params.uid)],
-    orderings: [
-      { field: "my.blog_post.publication_date", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-    limit: 2,
-  });
-
-  const { slices, title, publication_date, description, main_image } =
-    page.data;
+  //   const posts = await client.getAllByType("blog_post", {
+  //     filters: [prismic.filter.not("my.blog_post.uid", params.uid)],
+  //     orderings: [
+  //       { field: "my.blog_post.publication_date", direction: "desc" },
+  //       { field: "document.first_publication_date", direction: "desc" },
+  //     ],
+  //     limit: 2,
+  //   });
 
   return (
     <>
@@ -61,18 +58,18 @@ export default async function Page({ params }: { params: Params }) {
                 /> */}
               </div>
               <div className="mx-auto xl:mx-0 flex flex-col justify-center">
-                <ul className="flex gap-4 ">
+                {/* <ul className="flex gap-4 ">
                   {categories.map((category) => (
                     <li key={category.name}>
                       {" "}
-                      <PrismicNextLink href="/blog/categories/${`category.name`}">
-                        <Badge variant="outline">{category.name}</Badge>
-                      </PrismicNextLink>
-                    </li>
-                  ))}
-                </ul>
+                      {/* <PrismicNextLink document={category}> */}
+                {/* <Badge variant="outline">{category.name}</Badge> */}
+                {/* </PrismicNextLink> */}
+                {/* </li> */}
+                {/* ))} */}
+                {/* </ul> */}
                 <span className="text-slate-600 text-center xl:text-left font-normal text-base xl:pl-3 mx-auto pt-4">
-                  {page.data.publication_date
+                  {page?.data.publication_date
                     ? dateFormatter.format(new Date(page.data.publication_date))
                     : ""}
                 </span>{" "}

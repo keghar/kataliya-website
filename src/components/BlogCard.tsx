@@ -12,29 +12,32 @@ export const BlogCard = ({
   const { data } = post;
 
   return (
-    <PrismicNextLink
-      key={post.id}
-      document={post}
-      className="grid grid-cols-2 gap-10">
-      <PrismicNextImage
-        field={data.main_image}
-        sizes="100vw"
-        className="w-full max-w-sm max-h-60 rounded-xl object-cover"
-      />
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-1">
+    <PrismicNextLink className="" key={post.id} document={post}>
+      <div className="flex flex-col overflow-hidden rounded-lg shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-100 hover:bg-[#d7cbfc]/20 min-h-full">
+        <div className="flex-shrink-0">
+          <PrismicNextImage
+            field={data.main_image}
+            className="h-48 w-full object-cover"
+          />
+        </div>
+
+        <div className="flex flex-1 flex-col justify-between bg-transparent p-6 ">
           <p className="text-sm opacity-75 text-slate-700 border-b-2 w-min pb-1">
             {new Date(data?.publication_date || "").toLocaleDateString()}
           </p>
-          <div className="hover:opacity-75 duration-300 ease-in-out transition-all">
-            <h2 className="font-bold text-xl">
+
+          <div className="mt-2 block">
+            <div className="">
               <PrismicText field={data.title} />
-            </h2>
+            </div>
+            <div className="mt-3">
+              <RichText field={data.description} />
+            </div>
           </div>
+
+          <div>Categories</div>
         </div>
-        <RichText field={data.description} />
       </div>
-      <div className="border-b border-solid border-gray-200 w-full col-span-2" />
     </PrismicNextLink>
   );
 };

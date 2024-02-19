@@ -69,7 +69,7 @@ export default async function Page({ params }: { params: Params }) {
                 {/* ))} */}
                 {/* </ul> */}
                 <span className="text-slate-600 text-center xl:text-left font-normal text-base xl:pl-3 mx-auto pt-4">
-                  {page?.data.publication_date
+                  {page.data.publication_date
                     ? dateFormatter.format(new Date(page.data.publication_date))
                     : ""}
                 </span>{" "}

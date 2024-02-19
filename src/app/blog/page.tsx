@@ -34,7 +34,7 @@ export default async function Page() {
         <div className="flex flex-col justify-center">
           <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-8 min-h-lg px-4 mx-auto place-content-evenly">
             {posts.map((post) => (
-              <li className="max-w-lg xl:max-w-none min-h-lg">
+              <li className="max-w-lg xl:max-w-none min-h-lg" key={post.uid}>
                 <BlogCard key={post.id} post={post} />
               </li>
             ))}

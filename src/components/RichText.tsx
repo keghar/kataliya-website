@@ -39,7 +39,7 @@ export const richTextComponents: JSXMapSerializer = {
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className=" text-lg text-slate-600 prose leading-7 [&:not(:first-child)]:mt-6 ">
+    <p className=" text-lg text-slate-600 leading-7 [&:not(:first-child)]:mt-6 ">
       {children}
     </p>
   ),

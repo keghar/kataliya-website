@@ -18,13 +18,13 @@ export default async function Recent() {
       { field: "my.blog_post.publication_date", direction: "desc" },
       { field: "document.first_publication_date", direction: "desc" },
     ],
-    limit: 3,
+    limit: 6,
   });
 
   // Destructure out the content of the current page
 
   return (
-    <ul className="mx-auto flex flex-col xl:flex-row gap-12 w-full max-w-xl xl:max-w-none">
+    <ul className="mx-auto grid grid-cosl-1 md:grid-cols-2 xl:grid-cols-3 gap-12 w-full max-w-3xl lg:max-w-4xl xl:max-w-none">
       {posts?.map((post) => (
         <li className="basis-1/3" key={post.uid}>
           <BlogCard key={post.id} post={post} />

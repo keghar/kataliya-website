@@ -38,21 +38,11 @@
           "thumbnails": []
         }
       },
-      "categories": {
-        "type": "Group",
+      "publication_date": {
+        "type": "Date",
         "config": {
-          "label": "Categories",
-          "repeat": true,
-          "fields": {
-            "category": {
-              "type": "Link",
-              "config": {
-                "label": "Category",
-                "select": "document",
-                "customtypes": ["category"]
-              }
-            }
-          }
+          "label": "Publication Date",
+          "placeholder": ""
         }
       },
       "slices": {
@@ -70,13 +60,6 @@
               "type": "SharedSlice"
             }
           }
-        }
-      },
-      "publication_date": {
-        "type": "Date",
-        "config": {
-          "label": "Publication Date",
-          "placeholder": ""
         }
       }
     },

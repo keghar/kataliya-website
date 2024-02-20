@@ -18,7 +18,7 @@ const RichText = ({ slice }: RichTextProps): JSX.Element => {
       className=""
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}>
-      <div className="flex justify-center flex-col mx-auto max-w-prose gap-y-4 p-3">
+      <div className="flex justify-center flex-col mx-auto max-w-4xl gap-y-4 p-3 pt-10">
         {" "}
         <Main field={slice.primary.main_content} />
       </div>

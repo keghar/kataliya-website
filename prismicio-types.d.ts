@@ -91,21 +91,6 @@ export type BlogPageDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Item in *Blog Post → Categories*
- */
-export interface BlogPostDocumentDataCategoriesItem {
-  /**
-   * Category field in *Blog Post → Categories*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.categories[].category
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  category: prismic.ContentRelationshipField<"category">;
-}
-
 type BlogPostDocumentDataSlicesSlice = QuoteSlice | ImagesSlice | RichTextSlice;
 
 /**
@@ -146,15 +131,15 @@ interface BlogPostDocumentData {
   main_image: prismic.ImageField<never>;
 
   /**
-   * Categories field in *Blog Post*
+   * Publication Date field in *Blog Post*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.categories[]
+   * - **API ID Path**: blog_post.publication_date
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **Documentation**: https://prismic.io/docs/field#date
    */
-  categories: prismic.GroupField<Simplify<BlogPostDocumentDataCategoriesItem>>;
+  publication_date: prismic.DateField;
 
   /**
    * Slice Zone field in *Blog Post*
@@ -165,18 +150,7 @@ interface BlogPostDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice>;
-
-  /**
-   * Publication Date field in *Blog Post*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.publication_date
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  publication_date: prismic.DateField /**
+  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
    * Meta Description field in *Blog Post*
    *
    * - **Field Type**: Text
@@ -313,38 +287,6 @@ export type CategoriesPageDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Content for Category documents
- */
-interface CategoryDocumentData {
-  /**
-   * Name field in *Category*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: category.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField,
-}
-
-/**
- * Category document from Prismic
- *
- * - **API ID**: `category`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type CategoryDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<CategoryDocumentData>,
-    "category",
-    Lang
-  >;
-
 type HomeDocumentDataSlicesSlice =
   | AboutSlice
   | HomeBlogSectionSlice
@@ -413,7 +355,6 @@ export type AllDocumentTypes =
   | BlogPageDocument
   | BlogPostDocument
   | CategoriesPageDocument
-  | CategoryDocument
   | HomeDocument;
 
 /**
@@ -739,14 +680,10 @@ declare module "@prismicio/client" {
       BlogPageDocumentDataSlicesSlice,
       BlogPostDocument,
       BlogPostDocumentData,
-      BlogPostDocumentDataCategoriesItem,
-      BlogPostDocumentDataCategoriesItemCategory,
       BlogPostDocumentDataSlicesSlice,
       CategoriesPageDocument,
       CategoriesPageDocumentData,
       CategoriesPageDocumentDataSlicesSlice,
-      CategoryDocument,
-      CategoryDocumentData,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,

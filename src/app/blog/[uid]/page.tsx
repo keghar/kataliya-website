@@ -39,44 +39,26 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Container className="">
-        <div className="pt-20 md:pt-48 pb-10 px-3">
-          <div className="flex flex-col xl:flex-row px-2 lg:justify-around justify-center mx-auto xl:max-w-5xl gap-4">
-            <div
-              className="flex flex-col xl:items-start 
-            justify-center basis-1/2 gap-2">
-              <div className="mx-auto xl:mx-0">
-                <RichText field={page.data.title} />
+        <div className="pt-10 md:pt-48 pb-10 ">
+          <div className="">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-y-10 ">
+              <div className=" pt-16 text-center lg:text-left basis-1/2">
+                <div className="px-6 sm:px-8 ">
+                  <RichText field={page.data.title} />
+                  <div className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+                    <span className="text-slate-600 text-center xl:text-left font-normal text-base xl:pl-3 mx-auto pt-4">
+                      {page.data.publication_date
+                        ? dateFormatter.format(
+                            new Date(page.data.publication_date)
+                          )
+                        : ""}
+                    </span>{" "}
+                  </div>
+                </div>
               </div>
-              <div className="mx-auto xl:mx-0">
-                {/* <PrismicRichText
-                  field={page.data.description}
-                  components={{
-                    paragraph: ({ children }) => (
-                      <p className="text-2xl pl-3 text-gray-500">{children}</p>
-                    ),
-                  }}
-                /> */}
+              <div className="basis-1/2">
+                <PrismicNextImage field={page.data.main_image} />
               </div>
-              <div className="mx-auto xl:mx-0 flex flex-col justify-center">
-                {/* <ul className="flex gap-4 ">
-                  {categories.map((category) => (
-                    <li key={category.name}>
-                      {" "}
-                      {/* <PrismicNextLink document={category}> */}
-                {/* <Badge variant="outline">{category.name}</Badge> */}
-                {/* </PrismicNextLink> */}
-                {/* </li> */}
-                {/* ))} */}
-                {/* </ul> */}
-                <span className="text-slate-600 text-center xl:text-left font-normal text-base xl:pl-3 mx-auto pt-4">
-                  {page.data.publication_date
-                    ? dateFormatter.format(new Date(page.data.publication_date))
-                    : ""}
-                </span>{" "}
-              </div>
-            </div>
-            <div className="flex overflow-hidden rounded-xl shadow-xl shadow-slate-400 basis-1/2 max-w-prose mx-auto">
-              <PrismicNextImage field={page.data.main_image} />
             </div>
           </div>
         </div>

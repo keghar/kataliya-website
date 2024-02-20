@@ -28,32 +28,27 @@ const products = [
     href: "/blog/categories/business",
     icon: ChartPieIcon,
   },
-  {
-    name: "Real Estate",
-    description: "Speak directly to your customers with our engagement tool",
-    href: "/blog/categories/real-estate",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Health",
-    description: "Your customers’ data will be safe and secure",
-    href: "/blog/categories/health",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Food",
-    description: "Your customers’ data will be safe and secure",
-    href: "/blog/categories/food",
-    icon: SquaresPlusIcon,
-  },
+  // {
+  //   name: "Real Estate",
+  //   description: "Speak directly to your customers with our engagement tool",
+  //   href: "/blog/categories/real-estate",
+  //   icon: CursorArrowRaysIcon,
+  // },
+  // {
+  //   name: "Health",
+  //   description: "Your customers’ data will be safe and secure",
+  //   href: "/blog/categories/health",
+  //   icon: FingerPrintIcon,
+  // },
+  // {
+  //   name: "Food",
+  //   description: "Your customers’ data will be safe and secure",
+  //   href: "/blog/categories/food",
+  //   icon: SquaresPlusIcon,
+  // },
 ];
 const callsToAction = [
   { name: "See All Blogs", href: "/blog", icon: ArrowRightIcon },
-  {
-    name: "See All Catagories",
-    href: "/blog/categories",
-    icon: RectangleGroupIcon,
-  },
 ];
 
 const socials = [
@@ -185,7 +180,7 @@ export default function Example() {
           <li>
             {" "}
             <Link
-              href="#about"
+              href="/#about"
               className="text-base font-semibold leading-6 text-slate-700 hover:text-purple-700">
               About
             </Link>{" "}
@@ -193,7 +188,7 @@ export default function Example() {
           <li>
             {" "}
             <Link
-              href="#sign-up"
+              href="/#sign-up"
               className="text-base font-semibold leading-6 text-slate-700 hover:text-purple-700">
               Sign-up
             </Link>{" "}
@@ -239,7 +234,7 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
+                {/* <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
@@ -265,7 +260,13 @@ export default function Example() {
                       </Disclosure.Panel>
                     </>
                   )}
-                </Disclosure>
+                </Disclosure> */}
+                <Link
+                  onClick={() => setMobileMenuOpen(false)}
+                  href="/blog"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  Blog
+                </Link>
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
                   href="#sign-up"

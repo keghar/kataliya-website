@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Sit magna quis proident reprehenderit consequat duis eiusmod. Et magna aliqua veniam deserunt sit adipisicing cupidatat exercitation sint consequat consectetur. Labore esse velit in mollit elit labore nisi laborum sint nulla dolor laboris."
+									}
+								}
+							]
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Enim consectetur elit ullamco aliquip deserunt dolor mollit nisi culpa incididunt magna."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

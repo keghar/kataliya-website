@@ -104,8 +104,8 @@ export default function Footer() {
     <Container className="bg-gradient-to-b from-transparent to-[#cfc0fb]">
       <div className="pb-0" id="sign-up">
         <div className="mx-auto ">
-          <div className="relative mx-auto isolate overflow-hidden  inset-0   px-6 py-10 sm:px-24 xl:py-32 bg-gradient-to-b from-white to-[#cfc0fb]">
-            <footer className="mx-auto max-w-7xl overflow-hidden px-6 py-8 lg:px-8 mt-20">
+          <div className="relative mx-auto isolate overflow-hidden  inset-0   px-6 py-10 sm:px-24 xl:py-10 bg-gradient-to-b from-white to-[#cfc0fb]">
+            <footer className="mx-auto max-w-7xl overflow-hidden px-6 py-8 lg:px-8 mt-10">
               <nav
                 className="-mb-6 columns-2 flex justify-center space-x-12"
                 aria-label="Footer">
@@ -119,7 +119,7 @@ export default function Footer() {
                   </div>
                 ))}
               </nav>
-              <div className="flex flex-col justify-center mt-10 mx-auto gap-4">
+              <div className="flex flex-col items-center justify-center mt-10 mx-auto gap-4">
                 <span className="font-semibold mx-auto border-b border-gray-800 px-4">
                   Contact
                 </span>
@@ -127,13 +127,13 @@ export default function Footer() {
                   <Link
                     key={item.text}
                     href={item.href}
-                    className="text-slate-800 hover:text-gray-500 flex gap-2 mx-auto">
+                    className="text-slate-800 hover:text-gray-500 flex items-center gap-2 mx-auto">
                     <item.icon className="h-4 w-4" aria-hidden="true" />
                     <span>-{item.text}</span>
                   </Link>
                 ))}
               </div>
-              <div className="mt-10 flex justify-center space-x-10">
+              <div className="mt-10 flex items-center justify-center space-x-10">
                 {navigation.social.map((item) => (
                   <Link
                     key={item.name}

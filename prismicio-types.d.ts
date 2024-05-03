@@ -151,6 +151,17 @@ interface BlogPostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
+   * Meta Title field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog_post.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Blog Post*
    *
    * - **Field Type**: Text
@@ -158,7 +169,7 @@ interface BlogPostDocumentData {
    * - **API ID Path**: blog_post.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
+   */
   meta_description: prismic.KeyTextField;
 
   /**
@@ -171,17 +182,6 @@ interface BlogPostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Blog Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: blog_post.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
 }
 
 /**
@@ -288,6 +288,7 @@ export type CategoriesPageDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | FaqSlice
   | AboutSlice
   | HomeBlogSectionSlice
   | HeroSlice;
@@ -420,6 +421,58 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
+ * Primary content in *Faq → Items*
+ */
+export interface FaqSliceDefaultItem {
+  /**
+   * Question field in *Faq → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *Faq → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<FaqSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -537,11 +590,11 @@ export type HomeBlogSectionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *BlogContent → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Main Content field in *RichText → Primary*
+   * Main Content field in *BlogContent → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -552,7 +605,7 @@ export interface RichTextSliceDefaultPrimary {
 }
 
 /**
- * Default variation for RichText Slice
+ * Default variation for BlogContent Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -565,12 +618,12 @@ export type RichTextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *RichText*
+ * Slice variation for *BlogContent*
  */
 type RichTextSliceVariation = RichTextSliceDefault;
 
 /**
- * RichText Shared Slice
+ * BlogContent Shared Slice
  *
  * - **API ID**: `rich_text`
  * - **Description**: RichText
@@ -608,6 +661,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      FaqSlice,
+      FaqSliceDefaultItem,
+      FaqSliceVariation,
+      FaqSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

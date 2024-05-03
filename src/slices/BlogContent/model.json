@@ -1,7 +1,7 @@
 {
   "id": "rich_text",
   "type": "SharedSlice",
-  "name": "RichText",
+  "name": "BlogContent",
   "description": "RichText",
   "variations": [
     {
@@ -18,7 +18,7 @@
             "label": "Main Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "strong,paragraph,heading2,heading3,list-item,o-list-item,image,hyperlink"
+            "multi": "paragraph,heading2,heading3,strong,hyperlink,image,list-item,o-list-item,em"
           }
         }
       },

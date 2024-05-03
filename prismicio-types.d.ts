@@ -91,7 +91,7 @@ export type BlogPageDocument<Lang extends string = string> =
     Lang
   >;
 
-type BlogPostDocumentDataSlicesSlice = QuoteSlice | ImagesSlice | RichTextSlice;
+type BlogPostDocumentDataSlicesSlice = RichTextSlice;
 
 /**
  * Content for Blog Post documents
@@ -537,90 +537,6 @@ export type HomeBlogSectionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Images → Items*
- */
-export interface ImagesSliceDefaultItem {
-  /**
-   * Image field in *Images → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: images.items[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Default variation for Images Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImagesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  Simplify<ImagesSliceDefaultItem>
->;
-
-/**
- * Slice variation for *Images*
- */
-type ImagesSliceVariation = ImagesSliceDefault;
-
-/**
- * Images Shared Slice
- *
- * - **API ID**: `images`
- * - **Description**: Images
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImagesSlice = prismic.SharedSlice<"images", ImagesSliceVariation>;
-
-/**
- * Primary content in *Quote → Primary*
- */
-export interface QuoteSliceDefaultPrimary {
-  /**
-   * Quote field in *Quote → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: quote.primary.quote
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  quote: prismic.RichTextField;
-}
-
-/**
- * Default variation for Quote Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type QuoteSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<QuoteSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Quote*
- */
-type QuoteSliceVariation = QuoteSliceDefault;
-
-/**
- * Quote Shared Slice
- *
- * - **API ID**: `quote`
- * - **Description**: Quote
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type QuoteSlice = prismic.SharedSlice<"quote", QuoteSliceVariation>;
-
-/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -700,14 +616,6 @@ declare module "@prismicio/client" {
       HomeBlogSectionSliceDefaultPrimary,
       HomeBlogSectionSliceVariation,
       HomeBlogSectionSliceDefault,
-      ImagesSlice,
-      ImagesSliceDefaultItem,
-      ImagesSliceVariation,
-      ImagesSliceDefault,
-      QuoteSlice,
-      QuoteSliceDefaultPrimary,
-      QuoteSliceVariation,
-      QuoteSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

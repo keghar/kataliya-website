@@ -38,7 +38,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 </div>
               </div>
             </div>
-            <div className="basis-1/2">
+            <div className="basis-1/2 px-6 lg:px-8">
               <PrismicNextImage field={slice.primary.image} priority />
             </div>
           </div>

@@ -9,6 +9,12 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import Container from "@/components/Container";
 import { components } from "@/slices";
 import { Badge } from "@/components/ui/badge";
+import {
+  ArrowBigLeft,
+  ArrowBigLeftDashIcon,
+  ArrowLeftCircle,
+} from "lucide-react";
+import Link from "next/link";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 
@@ -39,7 +45,15 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Container className="">
-        <div className="pt-10 md:pt-48 pb-10 ">
+        <div className="py-10 px-2 md:px-10">
+          <Link className="flex items-center gap-2 text-gray-600" href="/blog">
+            <ArrowLeftCircle className="h-5" />
+            <span className="underline font-semibold text-sm">
+              Back To Blogs
+            </span>
+          </Link>
+        </div>
+        <div className="pt-10 lg::pt-28 pb-10 ">
           <div className="">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-y-10 ">
               <div className=" pt-16 text-center lg:text-left basis-1/2">
@@ -65,6 +79,16 @@ export default async function Page({ params }: { params: Params }) {
       </Container>
 
       <SliceZone slices={page.data.slices} components={components} />
+      <Container>
+        <div className="pt-20 px-10 flex justify-center">
+          <Link className="flex gap-2 text-gray-600" href="/blog">
+            <ArrowLeftCircle />
+            <span className="underline font-semibold text-center">
+              Back To Blogs
+            </span>
+          </Link>
+        </div>
+      </Container>
     </>
   );
 }
@@ -82,6 +106,11 @@ export async function generateMetadata({
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
+    openGraph: {
+      title: page.data.meta_title || "",
+      description: page.data.meta_description || "",
+      images: [page.data.main_image.url || ""],
+    },
   };
 }
 

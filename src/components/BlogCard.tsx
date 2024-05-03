@@ -21,7 +21,7 @@ export const BlogCard = ({
             className="h-48 w-full object-cover"
           />
         </div>
-        <p className="text-sm opacity-75 text-slate-700 border-b-2 w-full pb-1 pt-2">
+        <p className=" text-slate-500 border-b-2 w-full py-2 px-6">
           {post.data.publication_date
             ? dateFormatter.format(new Date(post.data.publication_date))
             : ""}

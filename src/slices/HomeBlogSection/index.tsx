@@ -5,8 +5,6 @@ import { RichText } from "@/components/RichText";
 import Recent from "@/components/tabs/Recent";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { TabsContent, TabsList, TabsTrigger, Tabs } from "@radix-ui/react-tabs";
-import { Suspense } from "react";
 
 /**
  * Props for `HomeBlogSection`.
@@ -36,7 +34,7 @@ const HomeBlogSection = ({ slice }: HomeBlogSectionProps): JSX.Element => {
             </div>
 
             <div className="flex gap-8 justify-center mt-10">
-              <Button>More Blogs</Button>
+              <Button href="/blog">More Blogs</Button>
             </div>
           </div>
         </div>

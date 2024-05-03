@@ -53,12 +53,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "quote": {
-              "type": "SharedSlice"
-            },
-            "images": {
-              "type": "SharedSlice"
-            },
             "rich_text": {
               "type": "SharedSlice"
             }

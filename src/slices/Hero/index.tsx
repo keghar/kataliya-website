@@ -34,7 +34,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 <div className="mt-10 flex justify-center gap-4 lg:justify-start h-full">
                   <Button>Blog</Button>
 
-                  <Button variant="outline">Sign-up</Button>
+                  <Button href="#footer" variant="outline">
+                    Contact
+                  </Button>
                 </div>
               </div>
             </div>

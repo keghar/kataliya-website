@@ -24,7 +24,7 @@ export default async function Page() {
     <>
       <Container>
         <div className=" pt-32 flex flex-col justify-center pb-10">
-          <div className="mx-auto">
+          <div className="mx-auto text-center">
             <RichText field={page.data.title} />
           </div>
           <div className="mx-auto mt-2">

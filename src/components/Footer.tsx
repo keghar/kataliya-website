@@ -148,13 +148,12 @@ export default function Footer() {
               </div>
               <p className="mt-10 text-center text-xs leading-5 text-slate-800">
                 Copyright &copy; {new Date().getFullYear()} Kataliya
-                Enterprises. All rights reserved.
-              </p>
-              <div className="w-full">
-                <Link className="text-center pb-20" href="/privacy">
+                Enterprises. All rights reserved.{" "}
+                <Link className="underline" href="/privacy">
                   Privacy Policy
                 </Link>
-              </div>
+              </p>
+              <div className="w-full mx-auto"></div>
             </footer>
             <svg
               className="opacity-30 rotate-180 bottom-0 left-0 absolute w-full"

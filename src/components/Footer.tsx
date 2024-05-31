@@ -7,6 +7,7 @@ import { FAQ } from "./FAQ";
 import Link from "next/link";
 import { MailIcon } from "lucide-react";
 import { Phone } from "lucide-react";
+import Image from "next/image";
 
 const navigation = {
   main: [
@@ -104,6 +105,13 @@ export default function Footer() {
     <Container className="bg-gradient-to-b from-transparent to-[#cfc0fb]">
       <div className="pb-0" id="sign-up">
         <div className="mx-auto ">
+          <Image
+            src="/katlogo.png"
+            alt="Kataliya enterprises logo"
+            width={400}
+            height={400}
+            className="mx-auto"
+          />
           <div className="relative mx-auto isolate overflow-hidden  inset-0   px-6 py-10 sm:px-24 xl:py-10 bg-gradient-to-b from-white to-[#cfc0fb]">
             <footer
               id="footer"
@@ -135,6 +143,7 @@ export default function Footer() {
                   </Link>
                 ))}
               </div>
+
               <div className="mt-10 flex items-center justify-center space-x-10">
                 {navigation.social.map((item) => (
                   <Link
@@ -146,12 +155,15 @@ export default function Footer() {
                   </Link>
                 ))}
               </div>
+              <div className="flex flex-col text-center pt-10">
+                {" "}
+                <Link className="underline text-xs" href="/privacy">
+                  Privacy Policy
+                </Link>
+              </div>
               <p className="mt-10 text-center text-xs leading-5 text-slate-800">
                 Copyright &copy; {new Date().getFullYear()} Kataliya
                 Enterprises. All rights reserved.{" "}
-                <Link className="underline" href="/privacy">
-                  Privacy Policy
-                </Link>
               </p>
               <div className="w-full mx-auto"></div>
             </footer>

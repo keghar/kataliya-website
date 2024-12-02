@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={inter.className}>
         <Header />
         {children}

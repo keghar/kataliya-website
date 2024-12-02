@@ -352,11 +352,77 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+type ServicesDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Services documents
+ */
+interface ServicesDocumentData {
+  /**
+   * Slice Zone field in *Services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice> /**
+   * Meta Description field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ServicesDocumentData>,
+    "services",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | BlogPageDocument
   | BlogPostDocument
   | CategoriesPageDocument
-  | HomeDocument;
+  | HomeDocument
+  | ServicesDocument;
 
 /**
  * Primary content in *About → Primary*
@@ -656,6 +722,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      ServicesDocument,
+      ServicesDocumentData,
+      ServicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimary,

@@ -30,8 +30,8 @@ const navigation = {
       ),
     },
     {
-      text: "251-269-9759",
-      href: "tel:251-269-9759",
+      text: "808-727-0518",
+      href: "tel:808-727-0518",
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg
           fill="currentColor"
@@ -106,12 +106,17 @@ export default function Footer() {
       <div className="pb-0" id="sign-up">
         <div className="mx-auto ">
           <Image
-            src="/katlogo.png"
+            src="/kataliyalogo.png"
             alt="Kataliya enterprises logo"
             width={400}
             height={400}
             className="mx-auto"
           />
+          <div className="mx-auto">
+            <p className="text-center text-2xl text-[#57257d]">
+              Kataliya Enterprises
+            </p>
+          </div>
           <div className="relative mx-auto isolate overflow-hidden  inset-0   px-6 py-10 sm:px-24 xl:py-10 bg-gradient-to-b from-white to-[#cfc0fb]">
             <footer
               id="footer"

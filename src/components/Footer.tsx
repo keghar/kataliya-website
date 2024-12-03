@@ -8,6 +8,7 @@ import Link from "next/link";
 import { MailIcon } from "lucide-react";
 import { Phone } from "lucide-react";
 import Image from "next/image";
+import logoMain from "../../public/kataliyalogo.png";
 
 const navigation = {
   main: [
@@ -106,7 +107,7 @@ export default function Footer() {
       <div className="pb-0" id="sign-up">
         <div className="mx-auto ">
           <Image
-            src="kataliyalogo.png"
+            src={logoMain}
             alt="Kataliya enterprises logo"
             width={400}
             height={400}

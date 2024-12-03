@@ -46,10 +46,10 @@ export default function page() {
                   kataliyaenterprises@gmail.com
                 </Link>
               </div>
-              <div>
+              <div className="flex justify-center">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d220350.66414680585!2d-87.6912684!3d30.3515431!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872368752fde39b9%3A0x6f899e72ad4d2bd4!2sKataliya%20Rudolph%20-%20Mortgage%20Broker!5e0!3m2!1sen!2sca!4v1724781010563!5m2!1sen!2sca"
-                  width="600"
+                  width="400"
                   height="450"
                   allowFullScreen={false}
                   loading="lazy"

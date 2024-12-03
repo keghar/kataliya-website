@@ -235,6 +235,14 @@ export default function Example() {
               About
             </Link>{" "}
           </li>
+          <li>
+            {" "}
+            <Link
+              href="/contact"
+              className="text-base font-semibold leading-6 text-slate-700 hover:text-purple-700">
+              Contact
+            </Link>{" "}
+          </li>
         </ul>
 
         <div className="hidden md:flex md:flex-1 md:justify-end">
@@ -323,6 +331,12 @@ export default function Example() {
                   href="/#about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                   About
+                </Link>
+                <Link
+                  onClick={() => setMobileMenuOpen(false)}
+                  href="/contact"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  Contact
                 </Link>
               </div>
               <div className="py-8 divide-y divide-gray-500/10">

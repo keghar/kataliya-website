@@ -106,7 +106,7 @@ export default function Footer() {
       <div className="pb-0" id="sign-up">
         <div className="mx-auto ">
           <Image
-            src="/katlogo.png"
+            src="/katlogomain.png"
             alt="Kataliya enterprises logo"
             width={400}
             height={400}

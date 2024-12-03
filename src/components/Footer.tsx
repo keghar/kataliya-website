@@ -8,7 +8,7 @@ import Link from "next/link";
 import { MailIcon } from "lucide-react";
 import { Phone } from "lucide-react";
 import Image from "next/image";
-import logo from "../../public/kataliyalogo.png";
+import logo from "/kataliyalogo.png";
 
 const navigation = {
   main: [

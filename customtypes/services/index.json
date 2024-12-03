@@ -1,6 +1,6 @@
 {
   "id": "services",
-  "label": "Services",
+  "label": "Mortgages",
   "format": "page",
   "repeatable": false,
   "status": true,
@@ -10,7 +10,17 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "rich_text": {
+              "type": "SharedSlice"
+            },
+            "about": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

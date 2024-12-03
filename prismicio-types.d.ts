@@ -352,14 +352,14 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type ServicesDocumentDataSlicesSlice = never;
+type ServicesDocumentDataSlicesSlice = RichTextSlice | AboutSlice | HeroSlice;
 
 /**
- * Content for Services documents
+ * Content for Mortgages documents
  */
 interface ServicesDocumentData {
   /**
-   * Slice Zone field in *Services*
+   * Slice Zone field in *Mortgages*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -368,7 +368,7 @@ interface ServicesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice> /**
-   * Meta Description field in *Services*
+   * Meta Description field in *Mortgages*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -379,7 +379,7 @@ interface ServicesDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Services*
+   * Meta Image field in *Mortgages*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -390,7 +390,7 @@ interface ServicesDocumentData {
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *Services*
+   * Meta Title field in *Mortgages*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -402,7 +402,7 @@ interface ServicesDocumentData {
 }
 
 /**
- * Services document from Prismic
+ * Mortgages document from Prismic
  *
  * - **API ID**: `services`
  * - **Repeatable**: `false`
